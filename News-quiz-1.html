@@ -23,6 +23,14 @@
         </select>
       </div>
 
+      <div id="question-3" class="form-group">
+        <label class="control-label">Is James Comey slimy?</label>
+        <select id='comey'>
+          <option value="answer-3">Yes, but he's not a liar.</option>
+          <option value="answer-4">No, he's just a liar.</option>
+        </select>
+      </div>
+
       <div class="form-group">
         <input id="grade-it" type="button" value="Grade my quiz" class="btn btn-primary" />
       </div>
@@ -41,8 +49,13 @@
        if (president == 'answer-2'){
          $('#question-2').addClass ('has-success');
        } else {
-         $('#question-2').addClass ('has-error');
-       }
+         $('#question-2').addClass ('has-error');}
+
+      var comey = $('#comey').val();
+        if (comey == 'answer-3'){
+            $('#question-3').addClass ('has-success');
+          } else {
+            $('#question-3').addClass ('has-error');}
       });
     </script>
   </body>
