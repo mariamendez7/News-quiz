@@ -34,9 +34,26 @@
       <div class="form-group">
         <input id="grade-it" type="button" value="Grade my quiz" class="btn btn-primary" />
       </div>
+
+      <div class="form-group">
+        <input id="show" type="button" value="Show me the answers" class="btn btn-primary" />
+      </div>
+
     </div>
 
     <script>
+    $(document).ready(function() {
+    $("button").on('click', function() {
+      $("button").click(function(){
+      $("#form-group").removeClass("has-success");
+      });
+
+      $("button").click(function(){
+      $('#form-group').removeClass("has-error");
+      });
+    });
+    });
+
       $('#grade-it').on('click', function() {
         var hours = $('#text').val();
 
@@ -56,6 +73,14 @@
             $('#question-3').addClass ('has-success');
           } else {
             $('#question-3').addClass ('has-error');}
+      });
+
+    $('#show').on('click', 'button', function() {
+      $(this).val('#text').find('answer-1').slidedown();
+
+      $(this).val('#prez').find('answer-2').slidedown();
+
+      $(this).val('#comey').find('answer-3').slidedown();
       });
     </script>
   </body>
